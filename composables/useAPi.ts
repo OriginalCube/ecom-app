@@ -1,11 +1,18 @@
 export const useApi = (route: string, request = 'GET', options: any) => {
-	const { data, error, refresh } = useFetch(
-		`${process.env.API_ENDPOINT}${route}`,
-		{
+	const config = useRuntimeConfig()
+	const baseURL = config.public.baseURL
+	if (baseURL) {
+		const { data, error, refresh, status } = useFetch(`${baseURL}${route}`, {
 			method: request,
 			...options,
-		},
-	)
+		})
+		return { data, error, refresh, status }
+	}
 
-	return { data, error, refresh }
+	return {
+		data: null,
+		error: 'API is not working!',
+		refresh: null,
+		status: 'pending',
+	}
 }

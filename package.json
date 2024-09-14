@@ -1,37 +1,45 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxt/icon": "^1.5.1",
-    "@nuxt/image": "^1.8.0",
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "@pinia/nuxt": "^0.5.4",
-    "@radix-icons/vue": "^1.0.0",
-    "@vueuse/core": "^11.0.3",
-    "axios": "^1.7.7",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "embla-carousel-vue": "^8.2.1",
-    "nuxt": "^3.13.0",
-    "pinia": "^2.2.2",
-    "radix-vue": "^1.9.5",
-    "shadcn-nuxt": "^0.10.4",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7",
-    "vue": "latest",
-    "vue-router": "latest"
-  },
-  "devDependencies": {
-    "eslint": "^9.10.0",
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.2"
-  }
+	"name": "nuxt-app",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown --ignore-path .prettierignore",
+		"*.{js,cjs,mjs,ts,jsx,tsx,vue}": "eslint --fix"
+	},
+	"dependencies": {
+		"@nuxt/icon": "^1.5.1",
+		"@nuxt/image": "^1.8.0",
+		"@nuxtjs/tailwindcss": "^6.12.1",
+		"@pinia/nuxt": "^0.5.4",
+		"@radix-icons/vue": "^1.0.0",
+		"@vueuse/core": "^11.0.3",
+		"axios": "^1.7.7",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"embla-carousel-vue": "^8.2.1",
+		"lint-staged": "^15.2.10",
+		"nuxt": "^3.13.0",
+		"pinia": "^2.2.2",
+		"radix-vue": "^1.9.5",
+		"shadcn-nuxt": "^0.10.4",
+		"tailwind-merge": "^2.5.2",
+		"tailwindcss-animate": "^1.0.7",
+		"vue": "latest",
+		"vue-router": "latest"
+	},
+	"devDependencies": {
+		"@iconify-json/tabler": "^1.2.2",
+		"eslint": "^9.10.0",
+		"husky": "^9.1.6",
+		"prettier": "^3.3.3",
+		"typescript": "^5.6.2"
+	}
 }

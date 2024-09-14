@@ -20,4 +20,9 @@ export default defineNuxtConfig({
 	},
 
 	compatibilityDate: '2024-09-10',
+	runtimeConfig: {
+		public: {
+			baseURL: import.meta.env.API_ENDPOINT,
+		},
+	},
 })

@@ -1,5 +1,5 @@
 <template>
-	<div class="main-theme">
+	<div class="bg-background">
 		<Header />
 		<slot />
 		<Footer />
