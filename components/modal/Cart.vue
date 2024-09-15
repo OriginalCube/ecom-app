@@ -18,10 +18,10 @@
 				<Icon
 					name="tabler:trash"
 					class="absolute right-4 top-2 cursor-pointer text-primary"
-					size="32"
+					:size="isMobile ? '24' : '32'"
 					@click="() => useCartStore().removeFromCart(item)"
 				/>
-				<div class="flex w-full justify-between gap-2">
+				<div class="flex w-11/12 justify-between gap-2">
 					<NuxtImg :src="item.images[0]" class="size-1/3 rounded-md" />
 
 					<div class="flex h-auto w-2/3 flex-col gap-2">
@@ -71,6 +71,7 @@
 import { useModal } from '~/store/useModal'
 import { useCartStore } from '~/store/useCartStore'
 const cartStore = useCartStore()
+const { isMobile } = useDevice()
 
 const { closeModal } = useModal()
 </script>
