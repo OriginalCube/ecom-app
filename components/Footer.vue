@@ -1,6 +1,6 @@
 <template>
 	<footer
-		class="h-16 w-full p-4 flex items-center justify-around fixed bg-secondary rounded-t-md bottom-0"
+		class="fixed bottom-0 flex h-16 w-full items-center justify-around rounded-t-md bg-secondary p-4"
 	>
 		<FooterNavigation
 			v-for="item in navigation"
@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 const navigation = [
 	{ icon: 'tabler:home', label: 'Home' },
-	{ icon: 'tabler:user', label: 'Profile' },
 	{ icon: 'tabler:settings', label: 'Settings' },
+	{ icon: 'tabler:user', label: 'Profile' },
 ]
 </script>

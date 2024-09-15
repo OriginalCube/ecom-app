@@ -20,7 +20,7 @@
 			</div>
 			<p class="mt-2 w-4/5 text-popover-foreground">{{ data.description }}</p>
 			<div class="mt-4 flex h-auto w-4/5 flex-col gap-2 md:flex-row">
-				<Button>Add to Card</Button>
+				<Button @click="() => addCart(data)">Add to Card</Button>
 				<Button variant="destructive" @click="closeModal">Close</Button>
 			</div>
 		</div>
@@ -31,5 +31,6 @@
 import { useModal } from '~/store/useModal'
 import type { Product } from '~/types/Store'
 
+const { addCart } = useCart()
 const { data, closeModal }: { data: Product } = useModal()
 </script>

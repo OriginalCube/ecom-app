@@ -2,9 +2,9 @@
 	<div class="w-full p-4">
 		<!--Categories-->
 		<Label class="text-lg font-bold text-primary">Categories</Label>
-		<div class="mt-4 h-20 w-full overflow-x-auto">
+		<div class="mt-4 h-20 w-full">
 			<div
-				class="flex w-full items-center justify-center gap-2 md:justify-around"
+				class="flex w-full items-center justify-center gap-2 overflow-x-auto md:justify-around"
 			>
 				<CategoryItem
 					v-for="item in categories"

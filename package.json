@@ -11,8 +11,7 @@
 		"prepare": "husky"
 	},
 	"lint-staged": {
-		"**/*": "prettier --write --ignore-unknown --ignore-path .prettierignore",
-		"*.{css,vue}": "stylelint --fix --ignore-path .gitignore"
+		"**/*": "prettier --write --ignore-unknown --ignore-path .prettierignore"
 	},
 	"dependencies": {
 		"@nuxt/icon": "^1.5.1",

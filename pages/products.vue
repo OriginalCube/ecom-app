@@ -1,5 +1,6 @@
 <template>
 	<div class="w-full p-4">
+		<Label class="text-lg font-bold text-primary">Products</Label>
 		<Input v-model="search" class="my-2" placeholder="Find Product" />
 		<div
 			v-if="filteredProducts.length"

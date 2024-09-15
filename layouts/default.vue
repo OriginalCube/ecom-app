@@ -1,8 +1,9 @@
 <template>
 	<div class="bg-background">
+		<Toaster />
 		<Modal />
 		<Header />
-		<div class="max-w-screen-xl m-auto">
+		<div class="m-auto max-w-screen-xl">
 			<slot />
 		</div>
 		<Footer v-if="isMobile" />
