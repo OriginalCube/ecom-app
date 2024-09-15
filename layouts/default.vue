@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-background">
+	<div class="bg-background" :class="authStore.theme">
 		<Toaster />
 		<Modal />
 		<Header />
@@ -11,5 +11,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useAuthStore } from '~/store/useAuthStore'
+
 const { isMobile } = useDevice()
+const authStore = useAuthStore()
 </script>

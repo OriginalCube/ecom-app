@@ -26,22 +26,33 @@
 			<Label class="text-4xl font-bold text-primary">Register</Label>
 			<Input v-model="user.name" placeholder="Name" />
 			<Input v-model="user.email" placeholder="Email" />
-			<Input v-model="user.role" placeholder="Role" />
+			<Select v-model="user.role" placeholder="Role">
+				<SelectTrigger>
+					<SelectValue placeholder="Select a role" />
+				</SelectTrigger>
+				<SelectContent>
+					<SelectItem value="customer">Customer</SelectItem>
+					<SelectItem value="admin">Admin</SelectItem>
+				</SelectContent>
+			</Select>
 			<Input v-model="user.password" placeholder="Password" type="password" />
-			<Button class="mt-4 w-full">Register</Button>
-			<Button class="mt-4 w-full">Already have an account?Login</Button>
+			<Button class="mt-4 w-full" @click="() => useAuth().registerUser(user)"
+				>Register</Button
+			>
+			<Button class="mt-4 w-full" @click="loggingIn = true" variant="secondary"
+				>Already have an account?Login
+			</Button>
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import { useAuth } from '~/composables/useAuth'
-
 const loggingIn = ref(true)
 const user = reactive({
 	name: '',
 	email: '',
 	role: '',
 	password: '',
+	avatar: 'https://picsum.photos/800',
 })
 </script>

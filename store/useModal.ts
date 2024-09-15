@@ -1,7 +1,7 @@
 export const useModal = defineStore('modal', {
 	state: () => ({
 		open: false,
-		type: 'display',
+		type: 'Display',
 		data: null as any,
 	}),
 	actions: {

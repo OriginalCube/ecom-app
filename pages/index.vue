@@ -3,9 +3,7 @@
 		<!--Categories-->
 		<Label class="text-lg font-bold text-primary">Categories</Label>
 		<div class="mt-4 h-20 w-full">
-			<div
-				class="flex w-full items-center justify-center gap-2 overflow-x-auto md:justify-around"
-			>
+			<div class="flex w-full gap-2 overflow-x-auto md:justify-around">
 				<CategoryItem
 					v-for="item in categories"
 					:key="item.id"
@@ -20,7 +18,7 @@
 		</div>
 
 		<!--Products-->
-		<main class="mb-24 mt-4 h-auto w-full">
+		<main class="mt-4 h-auto w-full pb-24">
 			<div class="flex items-center justify-between">
 				<Button
 					variant="ghost"
@@ -52,12 +50,7 @@
 					:key="item.id"
 					:item="item"
 					class="h-64 w-40"
-					@click="
-						() => {
-							modal.open = true
-							modal.data = item
-						}
-					"
+					@click="() => modal.openModal('Display', item)"
 				/>
 			</div>
 		</main>

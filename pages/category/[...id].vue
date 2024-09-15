@@ -2,9 +2,7 @@
 	<div class="w-full p-4">
 		<Label class="text-lg font-bold text-primary">Category</Label>
 		<div class="mt-4 h-20 w-full overflow-x-auto">
-			<div
-				class="flex w-full items-center justify-center gap-2 md:justify-around"
-			>
+			<div class="flex w-full gap-2 md:justify-around">
 				<CategoryItem
 					v-for="item in categories"
 					:key="item.id"
@@ -23,12 +21,7 @@
 				v-for="item in filteredProducts"
 				:key="item.id"
 				:item="item"
-				@click="
-					() => {
-						modal.open = true
-						modal.data = item
-					}
-				"
+				@click="() => modal.openModal('Display', item)"
 			/>
 		</div>
 		<Label v-else class="mt-4 text-2xl text-primary opacity-80">

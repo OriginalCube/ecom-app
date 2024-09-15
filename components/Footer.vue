@@ -5,6 +5,7 @@
 		<FooterNavigation
 			v-for="item in navigation"
 			:key="item.label"
+			:action="item.action"
 			:icon="item.icon"
 			:label="item.label"
 		/>
@@ -13,8 +14,16 @@
 
 <script lang="ts" setup>
 const navigation = [
-	{ icon: 'tabler:home', label: 'Home' },
-	{ icon: 'tabler:settings', label: 'Settings' },
-	{ icon: 'tabler:user', label: 'Profile' },
+	{ icon: 'tabler:home', label: 'Home', action: () => useRouter().push('/') },
+	{
+		icon: 'tabler:settings',
+		label: 'Settings',
+		action: () => useRouter().push('/settings'),
+	},
+	{
+		icon: 'tabler:user',
+		label: 'Profile',
+		action: () => useRouter().push('/profile'),
+	},
 ]
 </script>

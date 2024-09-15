@@ -5,10 +5,12 @@ export const useAuthStore = defineStore('auth', {
 			email: null as string,
 			name: null as string,
 			avatar: null as string,
+			role: null as string,
 		},
 		access_token: null as string,
 		refresh_token: null as string,
 		isLogin: false,
+		theme: '',
 	}),
 	actions: {
 		setUser(user: any) {
@@ -22,6 +24,10 @@ export const useAuthStore = defineStore('auth', {
 		clearUser() {
 			this.user = null
 			this.isLogin = false
+			const access_token = useCookie('access_token')
+			const refresh_token = useCookie('refresh_token')
+			access_token.value = null
+			refresh_token.value = null
 		},
 	},
 })

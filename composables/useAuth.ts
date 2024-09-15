@@ -1,5 +1,6 @@
 import { useAuthStore } from '~/store/useAuthStore'
 import { toast } from '~/components/ui/toast'
+import { useModal } from '~/store/useModal'
 
 export const useAuth = () => {
 	const loginUser = async ({
@@ -36,7 +37,54 @@ export const useAuth = () => {
 		}
 	}
 
+	const registerUser = async (user) => {
+		const { data } = await useFetch(`${useAPI()}/users`, {
+			method: 'POST',
+			body: user,
+		})
+
+		if (data.value) {
+			toast({
+				description: 'Register Successful',
+				title: 'Success, you can now login',
+			})
+			useAuthStore().setUser(data.value)
+		}
+	}
+
+	const createProduct = async (product: any) => {
+		const { data } = await useFetch(`${useAPI()}/products`, {
+			method: 'POST',
+			body: { ...product, images: ['https://i.imgur.com/ZANVnHE.jpeg'] },
+		})
+		if (data.value) {
+			toast({
+				description: 'Product Created Successfully',
+				title: 'Success',
+			})
+			useModal().closeModal()
+		}
+	}
+
+	const updateProduct = async (product: any) => {
+		const { data } = await useFetch(`${useAPI()}/products/${product.id}`, {
+			method: 'PUT',
+			body: product,
+		})
+
+		if (data.value) {
+			toast({
+				description: 'Product Updated Successfully',
+				title: 'Success',
+			})
+			useModal().closeModal()
+		}
+	}
+
 	return {
+		registerUser,
 		loginUser,
+		createProduct,
+		updateProduct,
 	}
 }

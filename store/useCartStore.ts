@@ -1,3 +1,5 @@
+import { toast } from '~/components/ui/toast'
+
 export const useCartStore = defineStore('cart', {
 	state: () => ({
 		cart: [],
@@ -10,6 +12,7 @@ export const useCartStore = defineStore('cart', {
 			this.cart = this.cart.filter((item) => item.id !== product.id)
 		},
 		clearCart() {
+			toast({ title: 'Success', description: 'Items ordered' })
 			this.cart = []
 		},
 	},

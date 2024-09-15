@@ -9,10 +9,33 @@
 		</div>
 
 		<div class="flex items-center justify-center gap-4">
-			<Icon name="tabler:notification" size="20" class="hover:cursor-pointer" />
-			<Icon name="tabler:shopping-bag" size="20" class="hover:cursor-pointer" />
+			<ClientOnly>
+				<Icon
+					v-if="useAuthStore().user.role === 'admin'"
+					name="tabler:plus"
+					size="24"
+					class="text-primary hover:cursor-pointer"
+					@click="() => useModal().openModal('CRUD')"
+				/>
+			</ClientOnly>
+			<Icon
+				name="tabler:settings"
+				size="24"
+				class="text-primary hover:cursor-pointer"
+				@click="() => useRouter().push('/settings')"
+			/>
+			<Icon
+				name="tabler:shopping-bag"
+				size="24"
+				class="text-yellow-400 hover:cursor-pointer"
+				@click="() => useModal().openModal('Cart', useCartStore().cart)"
+			/>
 		</div>
 	</nav>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useModal } from '~/store/useModal'
+import { useCartStore } from '~/store/useCartStore'
+import { useAuthStore } from '~/store/useAuthStore'
+</script>

@@ -10,12 +10,7 @@
 				v-for="item in filteredProducts"
 				:key="item.id"
 				:item="item"
-				@click="
-					() => {
-						modal.open = true
-						modal.data = item
-					}
-				"
+				@click="() => modal.openModal('Display', item)"
 			/>
 		</div>
 	</div>
