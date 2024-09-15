@@ -36,7 +36,12 @@
 				</SelectContent>
 			</Select>
 			<Input v-model="user.password" placeholder="Password" type="password" />
-			<Button class="mt-4 w-full" @click="() => useAuth().registerUser(user)"
+			<Button
+				class="mt-4 w-full"
+				@click="
+					async () =>
+						(loggingIn = await useAuth().registerUser(user, loggingIn))
+				"
 				>Register</Button
 			>
 			<Button class="mt-4 w-full" @click="loggingIn = true" variant="secondary"

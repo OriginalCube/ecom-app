@@ -15,5 +15,8 @@ export const useCartStore = defineStore('cart', {
 			toast({ title: 'Success', description: 'Items ordered' })
 			this.cart = []
 		},
+		totalPrice() {
+			return this.cart.reduce((acc, item) => acc + item.price, 0)
+		},
 	},
 })

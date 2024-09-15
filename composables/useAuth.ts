@@ -49,7 +49,10 @@ export const useAuth = () => {
 				title: 'Success, you can now login',
 			})
 			useAuthStore().setUser(data.value)
+			return true
 		}
+
+		return false
 	}
 
 	const createProduct = async (product: any) => {
@@ -69,7 +72,7 @@ export const useAuth = () => {
 	const updateProduct = async (product: any) => {
 		const { data } = await useFetch(`${useAPI()}/products/${product.id}`, {
 			method: 'PUT',
-			body: product,
+			body: { ...product, images: ['https://i.imgur.com/ZANVnHE.jpeg'] },
 		})
 
 		if (data.value) {

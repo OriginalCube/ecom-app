@@ -1,7 +1,7 @@
 <template>
 	<nav class="flex h-16 w-full items-center justify-between p-4 text-primary">
 		<div
-			class="flex cursor-pointer items-center justify-center gap-2"
+			class="flex cursor-pointer items-center justify-center gap-2 rounded-md p-2 hover:bg-primary hover:text-primary-foreground"
 			@click="useRouter().push('/')"
 		>
 			<Icon name="flat-color-icons:shop" size="36" />
@@ -11,13 +11,19 @@
 		<div class="flex items-center justify-center gap-4">
 			<ClientOnly>
 				<Icon
-					v-if="useAuthStore().user.role === 'admin'"
+					v-if="useAuthStore()?.user?.role === 'admin'"
 					name="tabler:plus"
 					size="24"
 					class="text-primary hover:cursor-pointer"
 					@click="() => useModal().openModal('CRUD')"
 				/>
 			</ClientOnly>
+			<Icon
+				name="tabler:user"
+				size="24"
+				class="text-primary hover:cursor-pointer"
+				@click="() => useRouter().push('/profile')"
+			/>
 			<Icon
 				name="tabler:settings"
 				size="24"

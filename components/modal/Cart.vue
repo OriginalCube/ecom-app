@@ -37,6 +37,10 @@
 			Cart is empty
 		</Label>
 
+		<Label class="m-auto text-4xl text-teal-500">
+			Total Price: ${{ useCartStore().totalPrice() }}
+		</Label>
+
 		<div class="flex items-center justify-center gap-4">
 			<Button
 				v-if="data.length"

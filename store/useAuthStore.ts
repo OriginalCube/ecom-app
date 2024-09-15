@@ -28,6 +28,7 @@ export const useAuthStore = defineStore('auth', {
 			const refresh_token = useCookie('refresh_token')
 			access_token.value = null
 			refresh_token.value = null
+			useRouter().push('/')
 		},
 	},
 })

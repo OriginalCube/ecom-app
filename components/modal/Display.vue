@@ -3,6 +3,7 @@
 		class="relative mb-4 flex w-full flex-col items-center overflow-y-auto px-4 md:flex-row"
 	>
 		<Icon
+			v-if="useAuthStore().user.role === 'admin'"
 			name="tabler:refresh"
 			class="absolute right-4 top-2 cursor-pointer text-primary"
 			size="32"
@@ -16,18 +17,24 @@
 
 		<div class="flex w-full flex-col items-center justify-center gap-4">
 			<Input
+				v-if="useAuthStore().user.role === 'admin'"
 				v-model="data.title"
 				placeholder="Title"
-				:disabled="useAuthStore().user.role === 'customer'"
 				class="m-auto mt-8 w-4/5 text-2xl text-primary"
 			/>
+			<Label v-else class="m-auto mt-8 w-4/5 text-2xl text-primary">
+				{{ data.title }}
+			</Label>
 			<div class="flex w-4/5 items-center gap-2">
 				<Input
+					v-if="useAuthStore().user.role === 'admin'"
 					v-model="data.price"
-					:disabled="useAuthStore().user.role === 'customer'"
 					type="number"
 					class="text-2xl font-bold text-yellow-400"
 				/>
+				<Label v-else class="text-2xl font-bold text-yellow-400">
+					${{ data.price }}
+				</Label>
 				<Badge class="font-bold">{{ data?.category.name }}</Badge>
 			</div>
 			<p class="mt-2 w-4/5 text-popover-foreground">{{ data.description }}</p>
