@@ -8,9 +8,19 @@
 
 		<div
 			class="flex h-auto w-full flex-col items-center justify-between gap-4 overflow-y-auto"
-			v-if="data.length"
+			v-if="cartStore.cart.length"
 		>
-			<div v-for="item in data" :key="item.id" class="w-full">
+			<div
+				v-for="item in cartStore.cart"
+				:key="item.id"
+				class="relative w-full"
+			>
+				<Icon
+					name="tabler:trash"
+					class="absolute right-4 top-2 cursor-pointer text-primary"
+					size="32"
+					@click="() => useCartStore().removeFromCart(item)"
+				/>
 				<div class="flex w-full justify-between gap-2">
 					<NuxtImg :src="item.images[0]" class="size-1/3 rounded-md" />
 
@@ -43,7 +53,7 @@
 
 		<div class="flex items-center justify-center gap-4">
 			<Button
-				v-if="data.length"
+				v-if="cartStore.cart.length"
 				@click="
 					() => {
 						useCartStore().clearCart()
@@ -59,8 +69,8 @@
 
 <script lang="ts" setup>
 import { useModal } from '~/store/useModal'
-import type { Product } from '~/types/Store'
 import { useCartStore } from '~/store/useCartStore'
+const cartStore = useCartStore()
 
-const { data, closeModal }: { data: Product[] } = useModal()
+const { closeModal } = useModal()
 </script>

@@ -1,75 +1,49 @@
-# Nuxt 3 Minimal Starter
+# Ecom-APP
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A ecommerce app made with nuxt3 and vue3. Hosted on vercel.
 
-## Setup
+## Journey
 
-Make sure to install the dependencies:
+[journey.readme](./journey.md)
 
-```bash
-# npm
-npm install
+## TechStack
 
-# pnpm
-pnpm install
+- Nuxt3 / Vue3 - Frontend
+- TailwindCSS - Styling
+- Pinia - State Management
+- Shadcn UI - Components
 
-# yarn
-yarn install
+## Dev libraries
 
-# bun
-bun install
-```
+- ESLint
+- Prettier
+- Husky
 
-## Development Server
+## Editors / Tools
 
-Start the development server on `http://localhost:3000`:
+- IntelliJ IDEA
+- Debian OS
+- Bun
+- Gradient.Page - for theme
+- Dribbble - for design inspirations
 
-```bash
-# npm
-npm run dev
+## Features
 
-# pnpm
-pnpm run dev
+- [x] User Authentication
+- [x] CRUD on Products managements
+- [x] Item Filtering & Searching
+- [x] Cart
+- [x] Cart Item Modification
+- [x] Themes
 
-# yarn
-yarn dev
+## To make this website work
 
-# bun
-bun run dev
-```
+Required:
 
-## Production
+- Node
+- Bun
+- Create .env file copy this `API_ENDPOINT=https://api.escuelajs.co/api/v1`
+- Run `bun install`
+- Run `bun dev`
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Screenshots

@@ -26,10 +26,6 @@ export default defineNuxtConfig({
 
 	tailwindcss: { cssPath: '~/assets/css/main.css' },
 
-	axios: {
-		baseURL: 'https://fakestoreapi.com', // Used as fallback if no runtime config is provided
-	},
-
 	compatibilityDate: '2024-09-10',
 	runtimeConfig: {
 		public: {
