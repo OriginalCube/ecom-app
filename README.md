@@ -64,3 +64,11 @@ Required:
 | ----------- | ---------------------------------------------------------------------------------------------------------------- |
 | **Mobile**  | ![Screenshot 2024-09-15 191830](https://github.com/user-attachments/assets/9c2ecd89-c02c-425b-98cc-d9cc61c16bf6) |
 | **Desktop** | ![Screenshot 2024-09-15 191158](https://github.com/user-attachments/assets/78de106c-c8f6-4383-b0b2-97372eb76c88) |
+
+| Cart   | Image                                                                                                            |
+| ----------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Mobile**  | ![Screenshot 2024-09-15 193903](https://github.com/user-attachments/assets/0e5d5bb0-66e3-4c46-8ddf-b53df3993968) |
+| **Desktop** | ![Screenshot 2024-09-15 194245](https://github.com/user-attachments/assets/70d189a7-c9c8-44d8-b614-08d5579c62cc) |
+
+
+
