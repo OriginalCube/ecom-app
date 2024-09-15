@@ -1,5 +1,12 @@
 export default defineNuxtConfig({
-	modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxt/image', '@nuxt/icon'],
+	modules: [
+		'@nuxtjs/tailwindcss',
+		'shadcn-nuxt',
+		'@nuxt/image',
+		'@nuxt/icon',
+		'@pinia/nuxt',
+		'@nuxtjs/device',
+	],
 
 	shadcn: {
 		/**
@@ -11,6 +18,10 @@ export default defineNuxtConfig({
 		 * @default "./components/ui"
 		 */
 		componentDir: './components/ui',
+	},
+
+	pinia: {
+		storesDirs: ['./stores/**'],
 	},
 
 	tailwindcss: { cssPath: '~/assets/css/main.css' },

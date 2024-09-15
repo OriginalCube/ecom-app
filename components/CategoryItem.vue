@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="h-16 w-20 flex flex-col items-center justify-around px-2 text-primary"
+		class="flex h-16 min-w-20 cursor-pointer flex-col items-center justify-around px-2 text-primary hover:opacity-80"
 	>
 		<Icon :name="customIcons()" size="24" />
 		<Label class="text-xs font-bold">{{ item.name }}</Label>

@@ -1,9 +1,9 @@
 <template>
 	<div
-		class="h-40 w-full rounded-md bg-accent text-accent-foreground mt-4 flex py-4 px-6 border border-primary items-center justify-evenly gap-4"
+		class="m-auto mt-4 flex h-40 w-full items-center justify-evenly gap-4 rounded-md border border-primary bg-accent px-6 py-4 text-accent-foreground md:w-1/2"
 	>
-		<article class="flex flex-col gap-2 w-3/5">
-			<p class="font-bold text-2xl">
+		<article class="flex w-3/5 flex-col gap-2">
+			<p class="text-2xl font-bold">
 				{{ month }}.{{ day }} <span class="text-xl">Flash Sales</span>
 			</p>
 			<p>Cashback 100%</p>
@@ -13,8 +13,10 @@
 				>Sale Promo
 			</Button>
 		</article>
-		<div class="h-auto w-2/5">
-			<NuxtImg :src="data?.image ?? ''" class="rounded-md" />
+		<div class="h-auto w-2/5 overflow-hidden rounded-md md:size-32">
+			<ClientOnly>
+				<NuxtImg :src="data?.image ?? ''" class="size-full" />
+			</ClientOnly>
 		</div>
 	</div>
 </template>
@@ -22,6 +24,5 @@
 <script lang="ts" setup>
 const month = new Date().getMonth()
 const day = new Date().getDate()
-
-const { data } = useApi(`/categories/${Math.trunc(Math.random() * 2 + 1)}`)
+const { data } = await useFetch(`${useAPI()}/categories/2`)
 </script>

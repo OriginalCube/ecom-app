@@ -1,9 +1,14 @@
 <template>
 	<div class="bg-background">
+		<Modal />
 		<Header />
-		<slot />
-		<Footer />
+		<div class="max-w-screen-xl m-auto">
+			<slot />
+		</div>
+		<Footer v-if="isMobile" />
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { isMobile } = useDevice()
+</script>
